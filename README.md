@@ -4,7 +4,7 @@
 
 ## Ideia Geral 💭
 
-O Bem Te Vista é uma aplicação desenvolvida durante as aulas das matérias Projeto de Desenvolvimento de Sistemas para Internet e Projeto de Interface do Usuário. A plataforma é uma rede social focada na publicação e exploração de estilos de moda, visando possibilitar uma maior facilidade do leitor em compartilhar suas combinações de roupas, conhecer novos estilos e cadastrar seu guarda-roupas virtual.
+O Bem Te Vista é uma aplicação desenvolvida durante as aulas das matérias Projeto de Desenvolvimento de Sistemas para Internet e Projeto de Interface do Usuário. A plataforma é uma rede social focada na publicação e exploração de estilos de moda, visando possibilitar uma maior facilidade do usuário em compartilhar suas combinações de roupas, conhecer novos estilos e cadastrar seu guarda-roupas virtual.
 
 ## Artefatos do Projeto 📂
 - Documentos
