@@ -3,7 +3,9 @@ import React from 'react'
 const Dashboard = () => {
     return(
         <div>
-            Dashboard
+            <a href='/Login'>Login</a>
+            <br/>
+            <a href='/Cadastro'>Cadastro</a>
         </div>
     )
 }
