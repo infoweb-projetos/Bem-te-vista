@@ -1,75 +1,58 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
+const sqlite3 = require('sqlite3').verbose(); // Incluindo verbose para melhor debug
 const cors = require('cors');
 
 app.use(express.json());
 app.use(cors());
 
-app.listen(3002, () => {
-    console.log('server ta rodando na porta 3002');
-});
-
-// MySQL
-//
-// const db = mysql.createConnection({
-//     user: 'root',
-//     password: '',
-//     host: 'localhost',
-//     database: 'bemtevista'
-// });
-
-// // Verificando a conexão com o banco de dados
-// db.connect((err) => {
-//     if (err) {
-//         console.error('Erro ao conectar ao banco de dados:', err);
-//         return;
-//     }
-//     console.log('Conectado ao banco de dados!');
-// });
-
-// SQlite
-const sqlite3 = require('sqlite3');
-
+// Inicializa o banco de dados SQLite
 const db = new sqlite3.Database('./database.sqlite', (error) => {
     if (error) {
-        console.log(error);
+        console.log('Erro ao conectar ao banco de dados:', error);
         return;
     }
-    db.run('create table if not exists usuarios (id integer primary key, Nome text, Username text, Email text, Senha text)', (error) => {
+    console.log('Conectado ao banco de dados!');
+
+    // Cria a tabela se não existir
+    db.run('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, Nome TEXT, Username TEXT, Email TEXT, Senha TEXT)', (error) => {
         if (error) {
-            console.log(error);
+            console.log('Erro ao criar tabela:', error);
             return;
         }
-        db.run('insert into usuarios (Nome, Username, Email, Senha) values (?, ?, ?, ?)', ['Leonardo Minora', 'minora', 'l.m@ifrn', '123'], (error) => {
+
+        // Insere um usuário de exemplo (opcional, pode remover se não necessário)
+        db.run('INSERT INTO usuarios (Nome, Username, Email, Senha) VALUES (?, ?, ?, ?)', ['Leonardo Minora', 'minora', 'l.m@ifrn', '123'], (error) => {
             if (error) {
-                console.log(error);
+                console.log('Erro ao inserir usuário:', error);
                 return;
             }
-            db.all('select * from usuarios', (error, rows) => {
-                console.log(error, rows);
+
+            // Consulta para verificar a inserção (opcional, pode remover se não necessário)
+            db.all('SELECT * FROM usuarios', (error, rows) => {
+                if (error) {
+                    console.log('Erro ao consultar usuários:', error);
+                } else {
+                    console.log('Usuários:', rows);
+                }
             });
         });
     });
 });
 
-
-
+// Rota para cadastro de usuários
 app.post('/Cadastro', (req, res) => {
-    const sentEmail = req.body.Email;
-    const sentName = req.body.Name;
-    const sentUserName = req.body.UserName;
-    const sentSenha = req.body.Senha;
+    const { Email, Name, UserName, Senha } = req.body;
 
     console.log('Dados recebidos:', req.body); // Log dos dados recebidos
 
     const SQL = 'INSERT INTO usuarios (Nome, Username, Email, Senha) VALUES (?, ?, ?, ?)';
-    const Values = [sentName, sentUserName, sentEmail, sentSenha];
+    const Values = [Name, UserName, Email, Senha];
 
-    db.query(SQL, Values, (err, results) => {
+    db.run(SQL, Values, function (err) {
         if (err) {
-            console.error('Erro ao inserir usuário:', err); // Log do erro
-            res.status(500).send(err); // Envia um erro 500 se a inserção falhar
+            console.error('Erro ao inserir usuário:', err.message); // Log do erro
+            res.status(500).send(err.message); // Envia um erro 500 se a inserção falhar
         } else {
             console.log('Usuário inserido com sucesso');
             res.send({ message: 'Usuário adicionado!' });
@@ -77,36 +60,26 @@ app.post('/Cadastro', (req, res) => {
     });
 });
 
+// Rota para login de usuários
 app.post('/Login', (req, res) => {
-    const sentLoginUserName = req.body.LoginUserName;
-    const sentLoginSenha = req.body.LoginSenha;
+    const { LoginUserName, LoginSenha } = req.body;
 
-    const SQL = 'SELECT * FROM usuarios WHERE Username = ? AND Senha = ?'; // Correção aqui
-    const Values = [sentLoginUserName, sentLoginSenha];
+    const SQL = 'SELECT * FROM usuarios WHERE Username = ? AND Senha = ?';
+    const Values = [LoginUserName, LoginSenha];
 
-    // MySql
-    // db.query(SQL, Values, (err, results) => {
-    //     if (err) {
-    //        res.send({error: err})
-    //     }
-    //     if (results.length > 0) { // Correção aqui
-    //         res.send(results)
-    //     } 
-    //     else {
-    //         res.send({ message: 'Erro nas credenciais' }) // Resposta apropriada
-    //     }
-    // });
     db.all(SQL, Values, (error, rows) => {
-        console.log(error, rows);
         if (error) {
-            res.send({ error: error })
+            console.error('Erro ao consultar usuários:', error.message);
+            res.status(500).send(error.message);
+        } else if (rows.length > 0) {
+            res.send(rows[0]);
+        } else {
+            res.send({ message: 'Erro nas credenciais' });
         }
-        if (rows.length > 0) { // Correção aqui
-            res.send(rows[0])
-        }
-        else {
-            res.send({ message: 'Erro nas credenciais' }) // Resposta apropriada
-        }
-
     });
+});
+
+// Inicia o servidor
+app.listen(3002, () => {
+    console.log('Server rodando na porta 3002');
 });

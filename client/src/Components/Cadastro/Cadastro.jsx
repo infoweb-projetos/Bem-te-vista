@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'; // Importando useNavigate
 import '../../App.css'
 import Axios from 'axios'
 
@@ -8,6 +9,7 @@ import bgforms from '../../imagens/bg-forms.png'
 
 
 const Cadastro = () => {
+  const navigate = useNavigate(); // Criando a instância de navegação
 
   const [email, setEmail] = useState('')
   const [userName, setUserName] = useState('')
@@ -22,6 +24,7 @@ const Cadastro = () => {
       Senha: senha
     }).then(()=>{
       console.log('usuário foi criado')
+      Navigate('/Login')
     })
   }
 

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'; // Importando useNavigate
 import '../../App.css'
 import Axios from 'axios'
 
@@ -8,6 +9,9 @@ import cabide from '../../imagens/cabide.svg'
 import bgforms from '../../imagens/bg-forms.png'
 
 const Login = () => {
+
+  const navigate = useNavigate(); // Criando a instância de navegação
+
 
   const [loginUserName, setLoginUserName] = useState('')
   const [loginSenha, setLoginSenha] = useState('')
@@ -21,6 +25,7 @@ const Login = () => {
     })
     .then((response) => {
         console.log(response.data.message);
+        navigate('/')
         // Se o login for bem-sucedido, você pode realizar outras ações aqui
     })
 };
