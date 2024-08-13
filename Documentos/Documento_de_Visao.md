@@ -6,9 +6,10 @@
 |  Data  | Versão | Descrição | Autor |
 |:-------|:-------|:----------|:------|
 | 17/05/2024 | **1.00** | Versão Inicial  | Iraikare Rodrigues |
+| 13/08/2024 | **2.00** | Correção geral  | Lucas de Lima |
 
 ## 1. Objetivo do Projeto 
-Este projeto tem o objetivo de desenvolver um site que sirva de plataforma para leitores trocarem livros entre si sem a necessidade de transferências monetárias.
+Este projeto tem o objetivo de desenvolver um site que sirva de plataforma para os usuários explorarem diferentes estilos, publicarem suas combinações de roupas e discutirem moda uns com os outros.
  
 ## 2. Descrição do problema 
 | | |
