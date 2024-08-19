@@ -16,6 +16,9 @@ O Bem Te Vista é uma aplicação desenvolvida durante as aulas das matérias Pr
 - [Mapa do site]()
 - Protótipos de tela
   - [Layout's no Figma](https://www.figma.com/design/eWqzeDiM6pWWg30jZHqfHW/Marca-Gr%C3%A1fica---Bem-te-vista?node-id=115-57&t=GDeReeBwzBAWgTAp-1)
+- Repositórios do projeto
+  - [Back-end](https://github.com/infoweb-projetos/Bem-te-Vista-Backend)
+  - [Front-End](https://github.com/infoweb-projetos/Bem-te-Vista-Frontend)
 
 ## Equipe do Projeto 📚
 | [<img src="https://avatars.githubusercontent.com/u/105514249?v=4" width=150><br><sub>Felipe Gabriel</sub>](https://github.com/lipe0777) |  [<img src="https://avatars.githubusercontent.com/u/84422577?v=4" width=150><br><sub>Gabriel Ferreira</sub>](https://github.com/GabsFerrarii) | [<img src="https://avatars.githubusercontent.com/u/101957823?v=4" width=150><br><sub>Iraikare Rodrigues</sub>](https://github.com/Iraikare)  | [<img src="https://avatars.githubusercontent.com/u/105514196?v=4" width=150><br><sub>Jordson Albino</sub>](https://github.com/JordsonZ) | [<img src="https://avatars.githubusercontent.com/u/93990842?v=4" width=150><br><sub>Lielly Nátally</sub>](https://github.com/Lielly) | [<img src="https://avatars.githubusercontent.com/u/93940387?v=4" width=150><br><sub>Lucas de Lima</sub>](https://github.com/monzadrifteiro) | 
