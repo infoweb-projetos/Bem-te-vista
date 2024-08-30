@@ -17,6 +17,7 @@ O Bem Te Vista é uma aplicação desenvolvida durante as aulas das matérias Pr
 - Protótipos de tela
   - [Layout's no Figma](https://www.figma.com/design/eWqzeDiM6pWWg30jZHqfHW/Marca-Gr%C3%A1fica---Bem-te-vista?node-id=115-57&t=GDeReeBwzBAWgTAp-1)
 - Repositórios do projeto
+  - [Documentação](https://github.com/infoweb-projetos/Bem-te-vista)
   - [Back-end](https://github.com/infoweb-projetos/Bem-te-Vista-Backend)
   - [Front-End](https://github.com/infoweb-projetos/Bem-te-Vista-Frontend)
 
