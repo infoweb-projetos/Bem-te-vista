@@ -13,7 +13,7 @@ O Bem Te Vista é uma aplicação desenvolvida durante as aulas das matérias Pr
 - Detalhamento de casos de uso
   - [Realizar cadastro](Documentos/casos_de_uso/cdu_realizar_cadastro.md)
   - [Realizar login](Documentos/casos_de_uso/cdu_realizar_login.md)
-- [Mapa do site]()
+- [Mapa do site](Diagramas/Mapa_do_Site.png)
 - Protótipos de tela
   - [Layout's no Figma](https://www.figma.com/design/eWqzeDiM6pWWg30jZHqfHW/Marca-Gr%C3%A1fica---Bem-te-vista?node-id=115-57&t=GDeReeBwzBAWgTAp-1)
 - Repositórios do projeto
