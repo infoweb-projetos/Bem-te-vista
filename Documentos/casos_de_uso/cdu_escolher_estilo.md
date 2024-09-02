@@ -49,4 +49,4 @@ Após a execução deste caso de uso, espera que o sistema:
 ![Escolha de estilos](https://github.com/user-attachments/assets/f554b18f-5c2e-4ae0-b6e9-17e5b1317e60)
 
 ### 7. Dicionário de dados
-- Estilos - Uma lista contendo 30 estilos, sendo eles: Clássico, Minimalista, Boho, Vintage, Retro, Punk, Gótico, Grunge, Streetwear, Esportivo, Preppy, Chic, Roker, Romântico, Eclético, Futurista, Cowboy/Western, Militar, Glam, Grunge Revival, Cyberpunk, Safari, Hipster, Moderno, Casual, Formal, Kawaii, Artsy, Andrógino, Pin-up e Y2K
+- Estilos - Uma lista contendo 30 estilos, sendo eles: Andrógino, Artsy, Boho, Casual, Chic, Clássico, Cowboy/Western, Cyberpunk, Esportivo, Futurista, Glam, Gótico, Grunge, Grunge Revival, Hipster, Kawaii, Minimalista, Moderno, Militar, Pin-up, Punk, Preppy, Retro, Roker, Romântico, Safari, Streetwear, Vintage e Y2K
